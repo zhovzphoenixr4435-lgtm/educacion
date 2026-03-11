@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dataset</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Dataset Educativo</h1>
+  </header>
+ <nav>
+ <a href="index.html">Inicio</a>
+  <a href="info.html">Información General</a>
+  <a href="dataset.html">Dataset</a>
+  <a href="producto.html">Producto de Datos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="formulario.html">Formulario</a>
+
+  <form class="search-bar" onsubmit="return buscar(event)">
+    <input type="text" id="searchInput" placeholder="Buscar..." />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</nav>
+
+
+   <section class="banner" style="background:url('dataset-banner.jpg') center/cover no-repeat;">
+    <div class="banner-content">
+      <h2>Explora los datos</h2>
+      <p>Información estructurada para el análisis educativo.</p>
+    </div>
+  </section>
+ <section>
+  <div class="card">
+    <h2>Dataset: MEN_MATRICULACION_POR_GENERO_EDAD</h2>
+    <p>
+     Contiene los datos de los indices de paridad por género (IPG=F/M)
+      y la cantidad de los indicadores de matriculación EPBM 
+      Educación Prescolar, Básica y Media, por genero y edad 
+      desagregados por Entidad Territorial Certificada ETC, del año 2020
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Tabla de Datos</h2>
+   <table>
+  <thead>
+    <tr>
+      <th>Columnas / Variables / Campos / Atributos</th>
+      <th>Descripción de la información a obtener (resultado del análisis)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AÑO (anno_inf)</td>
+      <td>Permite analizar la evolución temporal de la matrícula educativa en los diferentes años. Se utiliza para identificar tendencias y comparaciones históricas.</td>
+    </tr>
+    <tr>
+      <td>MATRICULACION_FEM_3y4, 5, 6a10, 11a14, 15y16</td>
+      <td>Muestra el número de mujeres matriculadas por grupo de edad. Permite observar la participación femenina en cada rango etario y su evolución en el tiempo.</td>
+    </tr>
+    <tr>
+      <td>MATRICULACION_MASC_3y4, 5, 6a10, 11a14, 15y16</td>
+      <td>Indica el número de hombres matriculados por grupo de edad. Se usa para comparar la participación masculina con la femenina y analizar la cobertura educativa por género.</td>
+    </tr>
+    <tr>
+      <td>Muj_3y4, Muj_5, Muj_6a10, Muj_11a14, Muj_15y16</td>
+      <td>Representa la cantidad total de mujeres en cada rango de edad de la población. Permite estimar tasas de matrícula femenina y detectar brechas de acceso.</td>
+    </tr>
+    <tr>
+      <td>Hom_3y4, Hom_5, Hom_6a10, Hom_11a14, Hom_15y16</td>
+      <td>Refleja la población masculina por grupo de edad. Sirve para calcular tasas de matrícula masculina y realizar comparaciones con la población femenina.</td>
+    </tr>
+    <tr>
+      <td>CODIGODEPARTAMENTO (c_digodepartamento)</td>
+      <td>Código único del departamento. Facilita el análisis territorial y la agrupación de datos por regiones.</td>
+    </tr>
+    <tr>
+      <td>DEPARTAMENTO (departamento)</td>
+      <td>Nombre del departamento. Permite visualizar comparaciones geográficas y analizar diferencias regionales en la matrícula.</td>
+    </tr>
+    <tr>
+      <td>VAR00001</td>
+      <td>Variable categórica posiblemente sin relevancia analítica directa (requiere validación). Puede utilizarse como identificador o campo auxiliar.</td>
+    </tr>
+    <tr>
+      <td>CODIGOETC (c_digoetc)</td>
+      <td>Código del Establecimiento Territorial Certificado (ETC). Facilita la relación entre matrícula y entidades territoriales educativas.</td>
+    </tr>
+    <tr>
+      <td>ETC (etc)</td>
+      <td>Nombre del Establecimiento Territorial Certificado. Permite analizar la distribución y desempeño por entidad educativa.</td>
+    </tr>
+    <tr>
+      <td>TASA_MATRICULACION_FEM_3y4, 5, 6a10, 11a14, 15y16</td>
+      <td>Porcentaje de mujeres matriculadas respecto a la población femenina del grupo de edad. Permite medir cobertura y acceso educativo femenino.</td>
+    </tr>
+    <tr>
+      <td>TASA_MATRICULACION_MASC_3y4, 5, 6a10, 11a14, 15y16</td>
+      <td>Porcentaje de hombres matriculados respecto a la población masculina. Permite evaluar la cobertura educativa masculina.</td>
+    </tr>
+    <tr>
+      <td>IPG_TMATRICULACION_3y4, 5, 6a10, 11a14, 15y16</td>
+      <td>Índice de Paridad de Género (IPG) de matrícula. Indica la relación entre la tasa de matrícula femenina y masculina, mostrando brechas o equidad de género en la educación.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</section>
+
+
+  <footer>
+    <p>© 2025 Centro Educativo Digital</p>
+  </footer>
+  <script>
+  function buscar(event) {
+    event.preventDefault();
+    const texto = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (texto === "") {
+      alert("Por favor escribe algo para buscar.");
+      return false;
+    }
+
+    // Diccionario de palabras clave -> páginas
+    const paginas = {
+      "inicio": "index.html",
+      "home": "index.html",
+      "principal": "index.html",
+      "informacion": "info.html",
+      "info": "info.html",
+      "dataset": "dataset.html",
+      "datos": "dataset.html",
+      "formulario": "formulario.html",
+      "contacto": "formulario.html",
+      "producto": "producto.html",
+      "analisis": "producto.html",
+      "nosotros": "nosotros.html",
+      "equipo": "nosotros.html"
+    };
+
+    // Si el término coincide con una clave, redirige
+    if (paginas[texto]) {
+      window.location.href = paginas[texto];
+    } else {
+      alert("No se encontró ninguna sección con esa palabra. Intenta con: inicio, información, dataset, formulario, producto o nosotros.");
+    }
+
+    return false;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafcf7;
+  color: #333;
+}
+header {
+  background: linear-gradient(135deg, #668000, #aaff00);
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  text-align: center;
+}
+nav {
+  background: #009ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav a {
+  color: rgb(255, 255, 255);
+  padding: 14px 20px;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+nav a:hover {
+  background: #007180;
+  transform: scale(1.05);
+}
+.banner {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(200, 227, 28);
+  position: relative;
+}
+.banner::after {
+  content: "";
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.banner-content {
+  position: relative;
+  z-index: 1;
+}
+.banner h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.banner p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.btn {
+  display: inline-block;
+  background: #e9ff59;
+  color: rgb(255, 255, 255);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #ff5722;
+  transform: scale(1.05);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 20px;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+.card i {
+  color: #d3ee80;
+  margin-bottom: 10px;
+}
+footer {
+  background: #004080;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+@media (max-width: 600px) {
+  nav { flex-direction: column; }
+  .banner h2 { font-size: 24px; }
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.search-bar input {
+  padding: 6px 10px;
+  border-radius: 6px 0 0 6px;
+  border: none;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 6px 10px;
+  border: none;
+  background: #004080;
+  color: white;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-bar button:hover {
+  background: #00264d;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.search-bar input {
+  padding: 6px 10px;
+  border-radius: 6px 0 0 6px;
+  border: none;
+  outline: none;
+  min-width: 150px;
+}
+
+.search-bar button {
+  padding: 6px 10px;
+  border: none;
+  background: #004080;
+  color: white;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-bar button:hover {
+  background: #00264d;
+}
+.card ul {
+  text-align: left;
+  list-style-position: inside;
+}
+.btn-link {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 6px 12px;
+  background: #004080;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-link:hover {
+  background: #00264d;
+}
+
+.btn-link i {
+  margin-right: 6px;
+}
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 15px;
+}
+
+.logo-grid img {
+  max-width: 120px;
+  height: auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo-grid img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+.logo-unilibre {
+  max-width: 150px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo-unilibre:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+}
+
+.tabla-estilo {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.tabla-estilo th {
+  background-color: #008033;
+  color: white;
+  padding: 10px;
+  border: 2px solid #336600;
+}
+
+.tabla-estilo td {
+  border: 1.5px solid #1c8000;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.tabla-estilo tr:nth-child(even) {
+  background-color: #f5fff2;
+}
+
+.tabla-estilo tr:hover {
+  background-color: #e8ffe9;
+  transition: 0.2s;
+}

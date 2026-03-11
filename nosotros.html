@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Nosotros</h1>
+  </header>
+  <nav>
+  <a href="index.html">Inicio</a>
+  <a href="info.html">Información General</a>
+  <a href="dataset.html">Dataset</a>
+  <a href="producto.html">Producto de Datos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="formulario.html">Formulario</a>
+
+  <!-- Barra de búsqueda -->
+  <form class="search-bar" onsubmit="return buscar(event)">
+    <input type="text" id="searchInput" placeholder="Buscar..." />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</nav>
+
+  <section class="banner" style="background:url('nosotros-banner.jpg') center/cover no-repeat;">
+    <div class="banner-content">
+      <h2>Nuestro equipo</h2>
+      <p>Comprometidos con la innovación educativa</p>
+    </div>
+  </section>
+  <section>
+  <div class="card">
+    <h2>¿Quiénes Somos?</h2>
+    <p>
+      Somos <strong>Juan Camilo y Juan David</strong>, estudiantes de <strong>Ingeniería de Sistemas</strong> de segundo semestre en la 
+      <strong>Universidad Libre</strong>. Actualmente me encuentro en un proceso de formación en programación, 
+      desarrollo web y pensamiento computacional, con el objetivo de adquirir las competencias necesarias 
+      para avanzar en mi carrera y aportar soluciones innovadoras en el sector educativo y tecnológico.
+    </p>
+    <p>
+      Nos motiva el interés por la <strong>Inteligencia Artificial</strong> y el desarrollo de aplicaciones que 
+      impacten positivamente en la sociedad. Este proyecto representa un paso más en nuestro camino académico y profesional.
+    </p>
+
+    <div style="text-align: center; margin-top: 20px;">
+  <a href="https://www.unilibre.edu.co" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Escudo_de_la_Universidad_Libre_de_Colombia.svg"
+     alt="Universidad Libre" class="logo-unilibre">
+  </a>
+  <p><em>Haz clic en el logo para visitar la página oficial de la Universidad Libre</em></p>
+</div>
+</div>
+</section>
+
+  <footer>
+    <p>© 2025 Centro Educativo Digital</p>
+  </footer>
+  <script>
+  function buscar(event) {
+    event.preventDefault();
+    const texto = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (texto === "") {
+      alert("Por favor escribe algo para buscar.");
+      return false;
+    }
+
+    // Diccionario de palabras clave -> páginas
+    const paginas = {
+      "inicio": "index.html",
+      "home": "index.html",
+      "principal": "index.html",
+      "informacion": "info.html",
+      "info": "info.html",
+      "dataset": "dataset.html",
+      "datos": "dataset.html",
+      "formulario": "formulario.html",
+      "contacto": "formulario.html",
+      "producto": "producto.html",
+      "analisis": "producto.html",
+      "nosotros": "nosotros.html",
+      "equipo": "nosotros.html"
+    };
+
+    // Si el término coincide con una clave, redirige
+    if (paginas[texto]) {
+      window.location.href = paginas[texto];
+    } else {
+      alert("No se encontró ninguna sección con esa palabra. Intenta con: inicio, información, dataset, formulario, producto o nosotros.");
+    }
+
+    return false;
+  }
+</script>
+
+</body>
+</html>

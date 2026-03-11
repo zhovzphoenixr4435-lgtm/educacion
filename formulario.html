@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Contacto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Formulario de Contacto</h1>
+  </header>
+  <nav>
+  <a href="index.html">Inicio</a>
+  <a href="info.html">Información General</a>
+  <a href="dataset.html">Dataset</a>
+  <a href="producto.html">Producto de Datos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="formulario.html">Formulario</a>
+
+  <!-- Barra de búsqueda -->
+  <form class="search-bar" onsubmit="return buscar(event)">
+    <input type="text" id="searchInput" placeholder="Buscar..." />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</nav>
+
+
+  <section class="banner" style="background:url('form-banner.jpg') center/cover no-repeat;">
+    <div class="banner-content">
+      <h2>Queremos escucharte</h2>
+      <p>Envíanos tus dudas o comentarios</p>
+    </div>
+  </section>
+  <section>
+    <div class="card">
+      <form id="contactForm">
+        <input type="text" id="nombre" placeholder="Nombre completo" required />
+        <input type="email" id="email" placeholder="Correo electrónico" required />
+        <textarea id="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="resultado"></p>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 Centro Educativo Digital</p>
+  </footer>
+  <script>
+    const form = document.getElementById("contactForm");
+    const resultado = document.getElementById("resultado");
+    form.addEventListener("submit", function(event){
+      event.preventDefault();
+      const nombre = document.getElementById("nombre").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+      if(nombre === "" || email === "" || mensaje === ""){
+        resultado.textContent = "⚠️ Por favor, complete todos los campos.";
+        resultado.style.color = "red";
+      } else {
+        resultado.textContent = "✅ Formulario enviado con éxito.";
+        resultado.style.color = "green";
+        form.reset();
+      }
+    });
+  </script>
+  <script>
+  function buscar(event) {
+    event.preventDefault();
+    const texto = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (texto === "") {
+      alert("Por favor escribe algo para buscar.");
+      return false;
+    }
+
+    // Diccionario de palabras clave -> páginas
+    const paginas = {
+      "inicio": "index.html",
+      "home": "index.html",
+      "principal": "index.html",
+      "informacion": "info.html",
+      "info": "info.html",
+      "dataset": "dataset.html",
+      "datos": "dataset.html",
+      "formulario": "formulario.html",
+      "contacto": "formulario.html",
+      "producto": "producto.html",
+      "analisis": "producto.html",
+      "nosotros": "nosotros.html",
+      "equipo": "nosotros.html"
+    };
+
+    // Si el término coincide con una clave, redirige
+    if (paginas[texto]) {
+      window.location.href = paginas[texto];
+    } else {
+      alert("No se encontró ninguna sección con esa palabra. Intenta con: inicio, información, dataset, formulario, producto o nosotros.");
+    }
+
+    return false;
+  }
+</script>
+
+</body>
+</html>

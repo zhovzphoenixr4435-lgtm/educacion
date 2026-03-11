@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centro Educativo Digital - Inicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fa-solid fa-graduation-cap"></i> Centro Educativo Digital</h1>
+    <p>Innovación y conocimiento para el futuro</p>
+  </header>
+  <nav>
+  <a href="index.html">Inicio</a>
+  <a href="info.html">Información General</a>
+  <a href="dataset.html">Dataset</a>
+  <a href="producto.html">Producto de Datos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="formulario.html">Formulario</a>
+
+  <!-- Barra de búsqueda -->
+  <form class="search-bar" onsubmit="return buscar(event)">
+    <input type="text" id="searchInput" placeholder="Buscar..." />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</nav>
+
+
+  <section class="banner" style="background:url('banner.jpg') center/cover no-repeat;">
+    <div class="banner-content">
+      <h2>La Educación es el Camino al Futuro</h2>
+      <p>Explora cómo el sector educativo transforma vidas y sociedades.</p>
+      <a href="info.html" class="btn">Conoce más</a>
+    </div>
+  </section>
+  <section>
+    <h2 style="text-align:center;">Lo que encontrarás aquí</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fa-solid fa-book-open fa-2x"></i>
+        <h3>Información</h3>
+        <p>Aprende sobre la importancia del sector educativo y su aporte a la sociedad.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-database fa-2x"></i>
+        <h3>Dataset</h3>
+        <p>Consulta datos relevantes para el análisis educativo y la toma de decisiones.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-people-group fa-2x"></i>
+        <h3>Nosotros</h3>
+        <p>Conoce quiénes somos y cómo aportamos a la innovación educativa.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 Centro Educativo Digital - Todos los derechos reservados</p>
+  </footer>
+  <script>
+  function buscar(event) {
+    event.preventDefault();
+    const texto = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (texto === "") {
+      alert("Por favor escribe algo para buscar.");
+      return false;
+    }
+
+    // Diccionario de palabras clave -> páginas
+    const paginas = {
+      "inicio": "index.html",
+      "home": "index.html",
+      "principal": "index.html",
+      "informacion": "info.html",
+      "info": "info.html",
+      "dataset": "dataset.html",
+      "datos": "dataset.html",
+      "formulario": "formulario.html",
+      "contacto": "formulario.html",
+      "producto": "producto.html",
+      "analisis": "producto.html",
+      "nosotros": "nosotros.html",
+      "equipo": "nosotros.html"
+    };
+
+    // Si el término coincide con una clave, redirige
+    if (paginas[texto]) {
+      window.location.href = paginas[texto];
+    } else {
+      alert("No se encontró ninguna sección con esa palabra. Intenta con: inicio, información, dataset, formulario, producto o nosotros.");
+    }
+
+    return false;
+  }
+</script>
+
+</body>
+</html>

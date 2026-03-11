@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Producto de Datos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Producto de Datos</h1>
+  </header>
+  <nav>
+  <a href="index.html">Inicio</a>
+  <a href="info.html">Información General</a>
+  <a href="dataset.html">Dataset</a>
+  <a href="producto.html">Producto de Datos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="formulario.html">Formulario</a>
+
+  <!-- Barra de búsqueda -->
+  <form class="search-bar" onsubmit="return buscar(event)">
+    <input type="text" id="searchInput" placeholder="Buscar..." />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</nav>
+
+
+  <section>
+  <div class="card">
+    <h2>Gráficos importantes en el analisis</h2>
+     <img src="Captura de pantalla 2025-10-22 144144.png" alt="Gráfico">
+  </div>
+
+  <div class="card left-text">
+  <h2>Conclusiones</h2>
+  <ul>
+    <li>La mayoría de estudiantes tienen un rendimiento académico aceptable...</li>
+    <li>Los estudiantes con mayor asistencia presentan mejores resultados académicos.</li>
+    <li>Existe una relación clara entre baja asistencia y bajo rendimiento.</li>
+    <li>El promedio general del grupo es de 3.72, cercano al aprobado.</li>
+    <li>El gráfico de barras permite visualizar fácilmente los resultados.</li>
+  </ul>
+</div>
+
+<div class="card left-text">
+  <h2>Soluciones Propuestas</h2>
+  <ul>
+    <li><strong>Mejorar la asistencia:</strong> implementar clases dinámicas y reforzar temas con plataformas online.</li>
+    <li><strong>Refuerzo académico:</strong> ofrecer tutorías personalizadas y acceso a cursos gratuitos.</li>
+    <li><strong>Uso de tecnología:</strong> integrar herramientas digitales de aprendizaje.</li>
+    <li><strong>Seguimiento continuo:</strong> aplicar evaluaciones parciales y monitoreo de asistencia.</li>
+    <li><strong>Promover hábitos de estudio:</strong> capacitar a los estudiantes en técnicas de organización y uso de apps educativas.</li>
+  </ul>
+</div>
+<div class="logo-grid">
+  <a href="https://www.khanacademy.org" target="_blank">
+    <img src="https://cdn.kastatic.org/images/khan-logo-vertical-transparent.png" alt="Khan Academy">
+  </a>
+  <a href="https://www.coursera.org" target="_blank">
+    <img src="https://about.coursera.org/static/og-image.png" alt="Coursera">
+  </a>
+  <a href="https://www.edx.org" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/EdX_Logo.svg" alt="edX">
+  </a>
+  <a href="https://www.duolingo.com" target="_blank">
+    <img src="https://d35aaqx5ub95lt.cloudfront.net/images/dc30aa15cf6edc3c7d82e9c6f3a512b7.svg" alt="Duolingo">
+  </a>
+  <a href="https://www.codecademy.com" target="_blank">
+    <img src="https://upload.wikimedia.org/presskit/CodecademyLogo.png" alt="Codecademy">
+  </a>
+  <a href="https://moodle.org" target="_blank">
+    <img src="https://moodle.org/theme/image.php/moodleorg/theme_moodleorg/1644324854/moodle-logo" alt="Moodle">
+  </a>
+  <a href="https://www.notion.so" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion">
+  </a>
+ <a href="https://evernote.com" target="_blank">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Evernote_2018_logo.svg" alt="Evernote">
+  </a>
+</div>
+</div>
+</section>
+
+  <footer>
+    <p>© 2025 Centro Educativo Digital</p>
+  </footer>
+  <script>
+  function buscar(event) {
+    event.preventDefault();
+    const texto = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (texto === "") {
+      alert("Por favor escribe algo para buscar.");
+      return false;
+    }
+
+    // Diccionario de palabras clave -> páginas
+    const paginas = {
+      "inicio": "index.html",
+      "home": "index.html",
+      "principal": "index.html",
+      "informacion": "info.html",
+      "info": "info.html",
+      "dataset": "dataset.html",
+      "datos": "dataset.html",
+      "formulario": "formulario.html",
+      "contacto": "formulario.html",
+      "producto": "producto.html",
+      "analisis": "producto.html",
+      "nosotros": "nosotros.html",
+      "equipo": "nosotros.html"
+    };
+
+    // Si el término coincide con una clave, redirige
+    if (paginas[texto]) {
+      window.location.href = paginas[texto];
+    } else {
+      alert("No se encontró ninguna sección con esa palabra. Intenta con: inicio, información, dataset, formulario, producto o nosotros.");
+    }
+
+    return false;
+  }
+</script>
+<script>
+  const ctx = document.getElementById('graficoNotas').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Laura Gómez', 'Carlos Ruiz', 'María Pérez', 'Andrés López', 'Sofía Martínez'],
+      datasets: [{
+        label: 'Nota Final',
+        data: [4.2, 3.8, 2.9, 4.7, 3.0],
+        backgroundColor: ['#4CAF50','#2196F3','#f44336','#FFC107','#9C27B0']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: true, position: 'top' },
+        title: { display: true, text: 'Comparación de Rendimiento Académico' }
+      },
+      scales: {
+        y: { beginAtZero: true, max: 5 }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

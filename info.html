@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Información General</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Información General</h1>
+  </header>
+  <nav>
+  <a href="index.html">Inicio</a>
+  <a href="info.html">Información General</a>
+  <a href="dataset.html">Dataset</a>
+  <a href="producto.html">Producto de Datos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="formulario.html">Formulario</a>
+
+  <!-- Barra de búsqueda -->
+  <form class="search-bar" onsubmit="return buscar(event)">
+    <input type="text" id="searchInput" placeholder="Buscar..." />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</nav>
+
+
+  <section class="banner" style="background:url('info-banner.jpg') center/cover no-repeat;">
+    <div class="banner-content">
+      <h2>El Sector Educativo</h2>
+      <p>Conoce su importancia y su impacto en la sociedad.</p>
+    </div>
+  </section>
+  <section>
+    <div class="card">
+      <h2>Importancia</h2>
+      <p>
+        La educación es la base del desarrollo personal y social. A través de ella adquirimos conocimientos, valores y habilidades que nos permiten comprender el mundo, tomar decisiones responsables y aportar soluciones a los desafíos de nuestra comunidad.
+Invertir en educación es invertir en el futuro, ya que abre oportunidades de crecimiento profesional, impulsa la innovación y fomenta la igualdad. Una sociedad educada es más justa, solidaria y preparada para enfrentar los cambios de un mundo en constante evolución.
+Por eso, la educación no debe verse solo como un derecho, sino también como una herramienta poderosa que transforma vidas, impulsa sueños y construye un mejor mañana.
+      </p>
+    </div>
+    <div class="card">
+      <h2>Productos y Servicios</h2>
+      <p>
+        Desde la formación en todos los niveles hasta servicios de consultoría, educación virtual
+        y proyectos de investigación, la educación ofrece valor agregado a toda la comunidad.
+      </p>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 Centro Educativo Digital</p>
+  </footer>
+  <script>
+  function buscar(event) {
+    event.preventDefault();
+    const texto = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if (texto === "") {
+      alert("Por favor escribe algo para buscar.");
+      return false;
+    }
+
+    // Diccionario de palabras clave -> páginas
+    const paginas = {
+      "inicio": "index.html",
+      "home": "index.html",
+      "principal": "index.html",
+      "informacion": "info.html",
+      "info": "info.html",
+      "dataset": "dataset.html",
+      "datos": "dataset.html",
+      "formulario": "formulario.html",
+      "contacto": "formulario.html",
+      "producto": "producto.html",
+      "analisis": "producto.html",
+      "nosotros": "nosotros.html",
+      "equipo": "nosotros.html"
+    };
+
+    // Si el término coincide con una clave, redirige
+    if (paginas[texto]) {
+      window.location.href = paginas[texto];
+    } else {
+      alert("No se encontró ninguna sección con esa palabra. Intenta con: inicio, información, dataset, formulario, producto o nosotros.");
+    }
+
+    return false;
+  }
+</script>
+
+</body>
+</html>
